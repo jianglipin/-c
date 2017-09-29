@@ -1,0 +1,24 @@
+#include<iostream>
+#include<fstream>
+#include<cstdlib>
+
+usingnamespacestd;
+
+intmain(intargn,char**argv){
+    if(argn!=2){
+    cout<<"Usage:"<<argv[0]<<"FILENAME\n";
+   exit(EXIT_FAILURE);
+	}
+	ifstream inFile(argv[1]);
+ if(!inFile.is_open()){
+	cout<<"Couldnotopenfile.\n";
+   exit(EXIT_FAILURE);
+}
+    inti=0;
+    intc;
+   while((c=inFile.get())!=EOF)
+   if(c!='\n'&&c!=''&&c!='\t')
+  i++;
+   cout<<i;
+  return 0;
+}
